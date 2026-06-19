@@ -2,13 +2,18 @@ import { MapPin, Navigation, Phone } from 'lucide-react'
 import { ActionButton } from '../components/ActionButton'
 import { company } from '../data/content'
 import { areaHighlights, serviceAreas } from '../data/seoBlocks'
+import { publicAsset } from '../utils/assets'
 import './ServiceAreas.css'
 
 export function ServiceAreas() {
   return (
     <section className="section service-areas-section" id="service-areas">
       <div className="container service-areas-section__layout">
-        <div className="service-areas-section__map" aria-hidden="true">
+        <div
+          className="service-areas-section__map"
+          style={{ '--service-areas-map-image': `url("${publicAsset('/images/bestobivka/before-after/1-1.jpg')}")` }}
+          aria-hidden="true"
+        >
           <div className="service-areas-section__pin service-areas-section__pin--main">
             <MapPin size={22} />
             Саратов

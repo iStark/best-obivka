@@ -63,7 +63,7 @@
   padding: 34px;
   background:
     linear-gradient(180deg, rgba(24, 32, 29, 0.86), rgba(24, 32, 29, 0.94)),
-    url("/images/bestobivka/choise_material.jpg") center / cover;
+    var(--quiz-side-image) center / cover;
   color: #fff;
 }
 
@@ -392,7 +392,7 @@
   padding: 46px;
   background:
     linear-gradient(135deg, rgba(24, 32, 29, 0.96), rgba(24, 32, 29, 0.88)),
-    url("/images/bestobivka/before-after/3-1.jpg") center / cover;
+    var(--quiz-success-image) center / cover;
   color: #fff;
 }
 

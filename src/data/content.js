@@ -1,7 +1,9 @@
+import { publicAsset } from '../utils/assets'
+
 export const company = {
   name: 'BestObivka',
-  logo: '/images/bestobivka_logo_new.png',
-  logoLight: '/images/logo_bestobivka_white.png',
+  logo: publicAsset('/images/bestobivka_logo_new.png'),
+  logoLight: publicAsset('/images/logo_bestobivka_white.png'),
   phone: '8 (960) 355-64-88',
   phoneHref: 'tel:+79603556488',
   city: 'Саратов',
@@ -13,7 +15,7 @@ export const company = {
   okHref: 'https://ok.ru/profile/589633859125',
   maxHref: 'https://max.ru/u/f9LHodD0cOJ21lYc4qyvW1uJUjaCqtIEgL-Ymk2KZuopgDb6RL-xCaIpB4Q',
   whatsappHref: 'https://wa.me/79603556488',
-  maxButton: '/images/max_button_new_2.png',
+  maxButton: publicAsset('/images/max_button_new_2.png'),
   quizHref: '#quiz',
   mapSrc:
     'https://yandex.ru/map-widget/v1/?um=constructor%3A54df304266973ce5bb5c8d9808df12cbe4b8b567ed593534e1cd70499a1662a6&source=constructor',
@@ -38,25 +40,25 @@ export const heroStats = [
 
 export const heroSlides = [
   {
-    image: '/images/bestobivka/bestobivka_home.png',
+    image: publicAsset('/images/bestobivka/bestobivka_home.png'),
     alt: 'Диван после перетяжки BestObivka',
     title: 'Перетяжка диванов',
     position: 'right center',
   },
   {
-    image: '/images/bestobivka/before-after/3-1.jpg',
+    image: publicAsset('/images/bestobivka/before-after/3-1.jpg'),
     alt: 'Готовый диван в новой голубой обивке',
     title: 'Новая ткань и наполнитель',
     position: 'center center',
   },
   {
-    image: '/images/bestobivka/choise_material.jpg',
+    image: publicAsset('/images/bestobivka/choise_material.jpg'),
     alt: 'Каталоги тканей для перетяжки мебели',
     title: 'Подбор материалов',
     position: 'center center',
   },
   {
-    image: '/images/bestobivka/before-after/9-1.jpg',
+    image: publicAsset('/images/bestobivka/before-after/9-1.jpg'),
     alt: 'Мягкое изголовье после перетяжки',
     title: 'Кровати и изголовья',
     position: 'center center',
@@ -70,7 +72,7 @@ export const serviceItems = [
     fullTitle: 'Перетяжка дивана',
     price: 'от 7 000 руб.',
     basePrice: 7000,
-    image: '/images/bestobivka/uslugi/uslugi_divan_mobile.jpg',
+    image: publicAsset('/images/bestobivka/uslugi/uslugi_divan_mobile.jpg'),
     description: 'Обновляем ткань, наполнитель, пружинные блоки и механизмы трансформации.',
     tags: ['прямые диваны', 'еврокнижки', 'ремонт каркаса'],
   },
@@ -80,7 +82,7 @@ export const serviceItems = [
     fullTitle: 'Перетяжка кровати',
     price: 'от 5 000 руб.',
     basePrice: 5000,
-    image: '/images/bestobivka/uslugi/uslugi_krovat_mobile.jpg',
+    image: publicAsset('/images/bestobivka/uslugi/uslugi_krovat_mobile.jpg'),
     description: 'Перетягиваем мягкие изголовья, царги, основания и декоративные панели.',
     tags: ['изголовья', 'панели', 'эко-кожа'],
   },
@@ -90,7 +92,7 @@ export const serviceItems = [
     fullTitle: 'Перетяжка кресел',
     price: 'от 3 500 руб.',
     basePrice: 3500,
-    image: '/images/bestobivka/uslugi/uslugi_kreslo_mobile.jpg',
+    image: publicAsset('/images/bestobivka/uslugi/uslugi_kreslo_mobile.jpg'),
     description: 'Возвращаем форму, комфорт и аккуратный внешний вид любимым креслам.',
     tags: ['кресла', 'пуфы', 'стулья'],
   },
@@ -100,7 +102,7 @@ export const serviceItems = [
     fullTitle: 'Перетяжка угловых диванов',
     price: 'от 12 000 руб.',
     basePrice: 12000,
-    image: '/images/bestobivka/uslugi/uslugi_uglovye_mobile.jpg',
+    image: publicAsset('/images/bestobivka/uslugi/uslugi_uglovye_mobile.jpg'),
     description: 'Работаем с крупными модульными конструкциями, углами и секциями.',
     tags: ['модули', 'доставка', 'мастерская'],
   },
@@ -123,29 +125,29 @@ export const portfolioProjects = [
   {
     id: 'classic-corner',
     title: 'Угловой диван для гостиной',
-    before: '/images/bestobivka/before-after/1.jpg',
-    after: '/images/bestobivka/before-after/1-1.jpg',
+    before: publicAsset('/images/bestobivka/before-after/1.jpg'),
+    after: publicAsset('/images/bestobivka/before-after/1-1.jpg'),
     meta: ['антивандальная ткань', 'ремонт сидений', '5 дней'],
   },
   {
     id: 'soft-sofa',
     title: 'Семейный диван с новым велюром',
-    before: '/images/bestobivka/before-after/3.jpg',
-    after: '/images/bestobivka/before-after/3-1.jpg',
+    before: publicAsset('/images/bestobivka/before-after/3.jpg'),
+    after: publicAsset('/images/bestobivka/before-after/3-1.jpg'),
     meta: ['велюр', 'новый наполнитель', '4 дня'],
   },
   {
     id: 'compact-chair',
     title: 'Кресло после полной реставрации',
-    before: '/images/bestobivka/before-after/6.jpg',
-    after: '/images/bestobivka/before-after/6-1.jpg',
+    before: publicAsset('/images/bestobivka/before-after/6.jpg'),
+    after: publicAsset('/images/bestobivka/before-after/6-1.jpg'),
     meta: ['усиление каркаса', 'ткань букле', '3 дня'],
   },
   {
     id: 'bed-headboard',
     title: 'Мягкое изголовье в новой обивке',
-    before: '/images/bestobivka/before-after/9.jpg',
-    after: '/images/bestobivka/before-after/9-1.jpg',
+    before: publicAsset('/images/bestobivka/before-after/9.jpg'),
+    after: publicAsset('/images/bestobivka/before-after/9-1.jpg'),
     meta: ['эко-кожа', 'перетяжка панелей', '2 дня'],
   },
 ]
@@ -212,12 +214,12 @@ export const reasons = [
 ]
 
 export const reviews = [
-  '/images/bestobivka/reviews/review_1.jpg',
-  '/images/bestobivka/reviews/review_2.jpg',
-  '/images/bestobivka/reviews/review_3.jpg',
-  '/images/bestobivka/reviews/review_4.jpg',
-  '/images/bestobivka/reviews/review_5.jpg',
-  '/images/bestobivka/reviews/review_6.jpg',
+  publicAsset('/images/bestobivka/reviews/review_1.jpg'),
+  publicAsset('/images/bestobivka/reviews/review_2.jpg'),
+  publicAsset('/images/bestobivka/reviews/review_3.jpg'),
+  publicAsset('/images/bestobivka/reviews/review_4.jpg'),
+  publicAsset('/images/bestobivka/reviews/review_5.jpg'),
+  publicAsset('/images/bestobivka/reviews/review_6.jpg'),
 ]
 
 export const faqs = [

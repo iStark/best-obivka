@@ -13,6 +13,7 @@ import {
 import { company } from '../../data/content'
 import { quizContactFields, quizSteps } from '../../data/quiz'
 import { useQuiz } from '../../hooks/useQuiz'
+import { publicAsset } from '../../utils/assets'
 import './QuizModal.css'
 
 const initialAnswers = quizSteps.reduce((acc, step) => {
@@ -153,7 +154,16 @@ export function QuizModal() {
   }
 
   return (
-    <div className="quiz-modal" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+    <div
+      className="quiz-modal"
+      style={{
+        '--quiz-side-image': `url("${publicAsset('/images/bestobivka/choise_material.jpg')}")`,
+        '--quiz-success-image': `url("${publicAsset('/images/bestobivka/before-after/3-1.jpg')}")`,
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="quiz-title"
+    >
       <button className="quiz-modal__overlay" type="button" aria-label="Закрыть квиз" onClick={handleClose} />
 
       <div className="quiz-modal__shell">

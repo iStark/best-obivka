@@ -1,6 +1,7 @@
 import { Sparkles } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { materialGroups } from '../data/content'
+import { publicAsset } from '../utils/assets'
 import './Materials.css'
 
 export function Materials() {
@@ -10,7 +11,7 @@ export function Materials() {
         <div className="materials-section__image reveal-on-scroll">
           <img
             className="image-parallax"
-            src="/images/bestobivka/choise_material.jpg"
+            src={publicAsset('/images/bestobivka/choise_material.jpg')}
             alt="Каталоги обивочных материалов"
           />
         </div>

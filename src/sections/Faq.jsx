@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { FaqItem } from '../components/FaqItem'
 import { SectionHeading } from '../components/SectionHeading'
 import { faqs } from '../data/content'
+import { publicAsset } from '../utils/assets'
 import './Faq.css'
 
 export function Faq() {
@@ -11,7 +12,7 @@ export function Faq() {
     <section className="section faq-section" id="faq">
       <div className="container faq-section__layout">
         <div className="faq-section__media reveal-on-scroll">
-          <img src="/images/bestobivka/faq.png" alt="Мастерская BestObivka" />
+          <img src={publicAsset('/images/bestobivka/faq.png')} alt="Мастерская BestObivka" />
         </div>
         <div className="faq-section__content reveal-on-scroll">
           <SectionHeading

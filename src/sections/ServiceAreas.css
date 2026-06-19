@@ -18,7 +18,7 @@
   border-radius: 8px;
   background:
     linear-gradient(135deg, rgba(24, 32, 29, 0.86), rgba(24, 32, 29, 0.62)),
-    url("/images/bestobivka/before-after/1-1.jpg") center / cover;
+    var(--service-areas-map-image) center / cover;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
 }
 
