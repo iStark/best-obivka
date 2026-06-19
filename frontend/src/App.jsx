@@ -14,6 +14,7 @@ import { Portfolio } from './sections/Portfolio'
 import { PriceFactors } from './sections/PriceFactors'
 import { Process } from './sections/Process'
 import { Promo } from './sections/Promo'
+import { ProjectGallery } from './sections/ProjectGallery'
 import { RepairDirections } from './sections/RepairDirections'
 import { Reviews } from './sections/Reviews'
 import { ServiceAreas } from './sections/ServiceAreas'
@@ -34,6 +35,7 @@ function App() {
         <Estimate />
         <PriceFactors />
         <Portfolio />
+        <ProjectGallery />
         <Materials />
         <Process />
         <Promo />

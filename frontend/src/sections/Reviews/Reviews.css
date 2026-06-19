@@ -11,7 +11,15 @@
   align-items: end;
 }
 
-.reviews-section__chat {
+.reviews-section__actions {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.reviews-section__link {
 
   min-height: 44px;
   display: inline-flex;

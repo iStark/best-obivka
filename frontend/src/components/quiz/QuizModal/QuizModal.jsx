@@ -32,6 +32,7 @@ export function QuizModal() {
   const [answers, setAnswers] = useState(initialAnswers)
   const [contact, setContact] = useState(initialContact)
   const [files, setFiles] = useState([])
+  const [privacyAccepted, setPrivacyAccepted] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [touched, setTouched] = useState(false)
 
@@ -71,6 +72,7 @@ export function QuizModal() {
       setAnswers(initialAnswers)
       setContact(initialContact)
       setFiles([])
+      setPrivacyAccepted(false)
       setSubmitted(false)
       setTouched(false)
     }, 180)
@@ -103,7 +105,7 @@ export function QuizModal() {
   }
 
   const currentAnswer = currentStep ? answers[currentStep.id] : null
-  const canGoNext = isContactStep ? isContactValid(contact) : hasAnswer(currentAnswer)
+  const canGoNext = isContactStep ? isContactValid(contact, privacyAccepted) : hasAnswer(currentAnswer)
 
   const toggleAnswer = (optionId) => {
     setAnswers((current) => {
@@ -140,7 +142,7 @@ export function QuizModal() {
     event.preventDefault()
     setTouched(true)
 
-    if (!isContactValid(contact)) {
+    if (!isContactValid(contact, privacyAccepted)) {
       return
     }
 
@@ -208,9 +210,11 @@ export function QuizModal() {
                 <ContactStep
                   contact={contact}
                   files={files}
+                  privacyAccepted={privacyAccepted}
                   touched={touched}
                   onChange={setContact}
                   onFilesChange={setFiles}
+                  onPrivacyChange={setPrivacyAccepted}
                 />
               ) : (
                 <QuestionStep
@@ -285,7 +289,7 @@ function QuestionStep({ answer, step, touched, onSelect }) {
   )
 }
 
-function ContactStep({ contact, files, touched, onChange, onFilesChange }) {
+function ContactStep({ contact, files, privacyAccepted, touched, onChange, onFilesChange, onPrivacyChange }) {
   const updateField = (fieldId, value) => {
     onChange((current) => ({ ...current, [fieldId]: value }))
   }
@@ -327,10 +331,24 @@ function ContactStep({ contact, files, touched, onChange, onFilesChange }) {
           <Camera aria-hidden="true" size={18} />
           <span>{files.length ? `Выбрано фото: ${files.length}` : 'Приложить фото мебели'}</span>
         </label>
+
+        <label className="quiz-consent">
+          <input
+            type="checkbox"
+            checked={privacyAccepted}
+            onChange={(event) => onPrivacyChange(event.target.checked)}
+          />
+          <span>
+            Согласен на обработку персональных данных и принимаю{' '}
+            <a href={company.privacyPolicyHref} target="_blank" rel="noreferrer">
+              политику конфиденциальности
+            </a>
+          </span>
+        </label>
       </div>
 
-      {touched && !isContactValid(contact) ? (
-        <p className="quiz-error">Заполните имя и телефон, чтобы получить расчет.</p>
+      {touched && !isContactValid(contact, privacyAccepted) ? (
+        <p className="quiz-error">Заполните имя, телефон и подтвердите согласие, чтобы получить расчет.</p>
       ) : null}
     </div>
   )
@@ -398,7 +416,6 @@ function hasAnswer(value) {
   return Array.isArray(value) ? value.length > 0 : Boolean(value)
 }
 
-function isContactValid(contact) {
-  return contact.name.trim().length > 1 && contact.phone.trim().length > 5
+function isContactValid(contact, privacyAccepted) {
+  return contact.name.trim().length > 1 && contact.phone.trim().length > 5 && privacyAccepted
 }
-

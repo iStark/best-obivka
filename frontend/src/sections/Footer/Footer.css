@@ -48,6 +48,18 @@
   font-weight: 900;
 }
 
+.site-footer__policy {
+
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 13px;
+  font-weight: 700 !important;
+}
+
+.site-footer__policy:hover {
+
+  color: #fff !important;
+}
+
 @media (max-width: 900px) {
   .site-footer__layout {
 

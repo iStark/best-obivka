@@ -15,6 +15,8 @@ export const company = {
   okHref: 'https://ok.ru/profile/589633859125',
   maxHref: 'https://max.ru/u/f9LHodD0cOJ21lYc4qyvW1uJUjaCqtIEgL-Ymk2KZuopgDb6RL-xCaIpB4Q',
   whatsappHref: 'https://wa.me/79603556488',
+  yandexReviewsHref: 'https://yandex.ru/search/touch/?text=бестобивка+саратов&lr=194',
+  privacyPolicyHref: publicAsset('/privacy-policy.html'),
   maxButton: publicAsset('/images/max_button_new_2.png'),
   quizHref: '#quiz',
   mapSrc:
@@ -149,6 +151,39 @@ export const portfolioProjects = [
     before: publicAsset('/images/bestobivka/before-after/9.jpg'),
     after: publicAsset('/images/bestobivka/before-after/9-1.jpg'),
     meta: ['эко-кожа', 'перетяжка панелей', '2 дня'],
+  },
+]
+
+export const projectGalleryItems = [
+  {
+    title: 'Угловой диван после перетяжки',
+    image: publicAsset('/images/bestobivka/before-after/1-1.jpg'),
+    category: 'Диваны',
+  },
+  {
+    title: 'Семейный диван в новой ткани',
+    image: publicAsset('/images/bestobivka/before-after/3-1.jpg'),
+    category: 'Диваны',
+  },
+  {
+    title: 'Кресло после восстановления',
+    image: publicAsset('/images/bestobivka/before-after/6-1.jpg'),
+    category: 'Кресла',
+  },
+  {
+    title: 'Мягкое изголовье кровати',
+    image: publicAsset('/images/bestobivka/before-after/9-1.jpg'),
+    category: 'Кровати',
+  },
+  {
+    title: 'Обновленная мягкая мебель',
+    image: publicAsset('/images/bestobivka/before-after/10-1.jpg'),
+    category: 'Перетяжка',
+  },
+  {
+    title: 'Аккуратная посадка новой обивки',
+    image: publicAsset('/images/bestobivka/before-after/5-1.jpg'),
+    category: 'Детали',
   },
 ]
 
