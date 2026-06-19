@@ -323,6 +323,33 @@
   pointer-events: none;
 }
 
+.quiz-consent {
+
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: #5f6965;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.quiz-consent input {
+
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 2px 0 0;
+  accent-color: #d83434;
+}
+
+.quiz-consent a {
+
+  color: #315f86;
+  font-weight: 900;
+}
+
 .quiz-error {
 
   margin: 18px 0 0;
@@ -456,6 +483,7 @@
 .quiz-fields input:focus-visible,
 .quiz-fields textarea:focus-visible,
 .quiz-upload:focus-within,
+.quiz-consent:focus-within,
 .quiz-nav-button:focus-visible,
 .quiz-success__bottom button:focus-visible {
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, MessageCircle, Star } from 'lucide-react'
 import { SectionHeading } from '../../components/SectionHeading'
 import { company, reviews } from '../../data/content'
 import './Reviews.css'
@@ -20,10 +20,16 @@ export function Reviews() {
             title="Отзывы после перетяжки и ремонта мебели"
             text="Клиенты присылают фото готовой мебели, делятся впечатлениями и рекомендуют мастерскую друзьям."
           />
-          <a className="reviews-section__chat" href={company.telegramHref} target="_blank" rel="noreferrer">
-            <MessageCircle aria-hidden="true" size={18} />
-            Написать в Telegram
-          </a>
+          <div className="reviews-section__actions">
+            <a className="reviews-section__link" href={company.telegramHref} target="_blank" rel="noreferrer">
+              <MessageCircle aria-hidden="true" size={18} />
+              Написать в Telegram
+            </a>
+            <a className="reviews-section__link" href={company.yandexReviewsHref} target="_blank" rel="noreferrer">
+              <Star aria-hidden="true" size={18} />
+              Посмотреть Я.Отзывы
+            </a>
+          </div>
         </div>
 
         <div className="reviews-slider reveal-on-scroll" aria-label="Отзывы клиентов">
@@ -76,4 +82,3 @@ export function Reviews() {
     </section>
   )
 }
-

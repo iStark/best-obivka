@@ -20,9 +20,11 @@ export function Footer() {
           <span>
             {company.city}, {company.address}
           </span>
+          <a className="site-footer__policy" href={company.privacyPolicyHref}>
+            Политика конфиденциальности
+          </a>
         </div>
       </div>
     </footer>
   )
 }
-
