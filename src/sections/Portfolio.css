@@ -1,0 +1,147 @@
+.portfolio-tabs button:focus-visible {
+
+  outline: 3px solid rgba(216, 52, 52, 0.28);
+  outline-offset: 3px;
+}
+
+.portfolio-shell h3 {
+
+  margin: 0;
+  color: #18201d;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.portfolio-shell__meta span {
+
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: #eef4f1;
+  color: #2d665f;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.portfolio-tabs button {
+
+  border: 1px solid rgba(24, 32, 29, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  color: #34413c;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.portfolio-tabs button:hover {
+
+  transform: translateY(-1px);
+  border-color: rgba(216, 52, 52, 0.38);
+}
+
+.portfolio-tabs button.is-active {
+
+  background: #18201d;
+  color: #fff;
+  border-color: #18201d;
+}
+
+.portfolio-section {
+
+  background: #f4f5f1;
+}
+
+.portfolio-shell {
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 22px;
+  margin-top: 42px;
+  align-items: stretch;
+}
+
+.portfolio-shell__viewer {
+
+  min-width: 0;
+}
+
+.portfolio-shell__info {
+
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid rgba(24, 32, 29, 0.1);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.portfolio-shell__eyebrow {
+
+  margin: 0 0 10px;
+  color: #d83434;
+  font-weight: 900;
+}
+
+.portfolio-shell__meta {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 24px;
+}
+
+.portfolio-tabs {
+
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.portfolio-tabs button {
+
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  text-align: left;
+  font-weight: 800;
+}
+
+.portfolio-tabs span {
+
+  color: #d83434;
+  font-weight: 900;
+}
+
+.portfolio-tabs button.is-active span {
+
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .portfolio-shell {
+
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-shell__info {
+
+    order: -1;
+  }
+}
+
+@media (max-width: 620px) {
+  .portfolio-shell__info {
+
+    padding: 20px;
+  }
+}
