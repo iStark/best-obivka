@@ -1,0 +1,189 @@
+.service-areas-section {
+  overflow: hidden;
+  background: #18201d;
+  color: #fff;
+}
+
+.service-areas-section__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.service-areas-section__map {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(24, 32, 29, 0.86), rgba(24, 32, 29, 0.62)),
+    url("/images/bestobivka/before-after/1-1.jpg") center / cover;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.service-areas-section__map::before {
+  content: "";
+  position: absolute;
+  inset: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.service-areas-section__circle {
+  position: absolute;
+  left: 18%;
+  top: 18%;
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(242, 191, 97, 0.46);
+  border-radius: 999px;
+}
+
+.service-areas-section__route {
+  position: absolute;
+  left: 32%;
+  top: 49%;
+  width: 42%;
+  height: 2px;
+  background: linear-gradient(90deg, #d83434, #f2bf61);
+  transform: rotate(-18deg);
+  transform-origin: left center;
+}
+
+.service-areas-section__pin {
+  position: absolute;
+  z-index: 1;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+}
+
+.service-areas-section__pin--main {
+  left: 24%;
+  top: 42%;
+  background: #d83434;
+}
+
+.service-areas-section__pin--side {
+  right: 16%;
+  top: 33%;
+}
+
+.service-areas-section__content h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.service-areas-section__content > p:not(.section-heading__kicker) {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 18px;
+  line-height: 1.58;
+}
+
+.service-areas-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.service-areas-tags span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.84);
+  font-weight: 800;
+}
+
+.service-areas-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.service-areas-highlights article {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.service-areas-highlights strong {
+  display: block;
+  color: #f2bf61;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.service-areas-highlights span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.38;
+}
+
+.service-areas-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .service-areas-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-areas-section__content {
+    order: -1;
+  }
+
+  .service-areas-section__map {
+    min-height: 360px;
+  }
+
+  .service-areas-section__content h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 620px) {
+  .service-areas-section__content h2 {
+    font-size: 30px;
+  }
+
+  .service-areas-section__content > p:not(.section-heading__kicker) {
+    font-size: 16px;
+  }
+
+  .service-areas-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .service-areas-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .service-areas-actions .action-button {
+    width: 100%;
+  }
+}

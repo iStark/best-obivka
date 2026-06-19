@@ -1,0 +1,97 @@
+.price-factors-section {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(216, 52, 52, 0.09), transparent 30%),
+    #f4f5f1;
+}
+
+.price-factors-section__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.price-factors-section__copy h2 {
+  margin: 0;
+  color: #18201d;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.price-factors-section__copy > p:not(.section-heading__kicker) {
+  margin: 18px 0 28px;
+  color: #5f6965;
+  font-size: 18px;
+  line-height: 1.58;
+}
+
+.price-factors-list {
+  display: grid;
+  gap: 12px;
+}
+
+.price-factor-card {
+  display: grid;
+  grid-template-columns: 52px 48px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid rgba(24, 32, 29, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 38px rgba(33, 43, 39, 0.07);
+}
+
+.price-factor-card > span {
+  color: #d83434;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.price-factor-card svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #e4f0ed;
+  color: #2d665f;
+}
+
+.price-factor-card h3 {
+  margin: 0;
+  color: #18201d;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.price-factor-card p {
+  margin: 8px 0 0;
+  color: #5f6965;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .price-factors-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .price-factors-section__copy h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 620px) {
+  .price-factors-section__copy h2 {
+    font-size: 30px;
+  }
+
+  .price-factors-section__copy > p:not(.section-heading__kicker) {
+    font-size: 16px;
+  }
+
+  .price-factor-card {
+    grid-template-columns: 1fr;
+  }
+}
