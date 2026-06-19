@@ -1,30 +1,71 @@
 # BestObivka
 
-Редизайн лендинга мастерской по перетяжке мебели в Саратове и Энгельсе.
+Монорепозиторий проекта BestObivka — мастерская по перетяжке мебели в Саратове и Энгельсе.
 
-## Команды
-
-```bash
-npm install
-npm run dev
-npm run build
-npm run deploy
-npm run lint
+```
+best-obivka/
+├─ frontend/   React + Vite лендинг (деплой на GitHub Pages)
+└─ backend/    Laravel 12 + MoonShine — админка управления сайтом (/admin)
 ```
 
-Локальная разработка запускается через Vite. После запуска сайт доступен по адресу, который выводит `npm run dev`.
+## frontend/
 
-Деплой на GitHub Pages выполняется командой `npm run deploy`. Она собирает проект в `dist` и публикует результат в ветку `gh-pages`.
+Статический лендинг на React + Vite. Подробности — в [frontend/README.md](frontend/README.md).
 
-## Структура
+```bash
+cd frontend
+npm install
+npm run dev      # локальная разработка
+npm run deploy   # сборка + публикация на GitHub Pages
+```
 
-- `src/data/content.js` - тексты, цены, ссылки, FAQ, портфолио и контакты.
-- `src/components/` - переиспользуемые UI-компоненты: кнопки, шапка, FAQ, before/after.
-- `src/sections/` - секции лендинга.
-- `src/hooks/` - GSAP-анимации, Marquiz и hash-навигация.
-- `src/styles/site.css` - визуальная система страницы.
-- `public/images/` - локальные ассеты, скачанные с текущего сайта BestObivka.
+## backend/
 
-## Примечания
+Laravel 12 с админ-панелью [MoonShine](https://getmoonshine.app). База данных — MariaDB (через Docker).
 
-Проект использует React, Vite, GSAP и lucide-react. Vite зафиксирован на ветке 6, чтобы сборка работала на Node 18 и при этом `npm audit` оставался чистым.
+### Запуск
+
+```bash
+cd backend
+
+# 1. Поднять базу данных (MariaDB в Docker)
+docker compose up -d
+
+# 2. Установить зависимости (если свежий клон)
+composer install
+cp .env.example .env        # при необходимости
+php artisan key:generate    # при необходимости
+php artisan migrate
+
+# 3. Запустить сервер
+php artisan serve
+```
+
+### Админка
+
+Открывается по адресу **`/admin`** (например `http://127.0.0.1:8000/admin`).
+
+Тестовый супер-админ (созданный при установке — **смените пароль для прода**):
+
+- Логин: `admin@bestobivka.ru`
+- Пароль: `password`
+
+Создать нового пользователя: `php artisan moonshine:user`.
+
+### База данных
+
+`docker compose` поднимает MariaDB 11.4 на `127.0.0.1:3306`:
+
+| Параметр | Значение     |
+|----------|--------------|
+| database | `bestobivka` |
+| user     | `bestobivka` |
+| password | `secret`     |
+| root     | `root`       |
+
+Данные хранятся в Docker-томе `bestobivka-db-data`.
+
+## Дальнейшие шаги
+
+Способ доставки контента из админки на сайт (runtime API или статический экспорт
+в сборку фронтенда) ещё не выбран — определим при разработке ресурсов админки.

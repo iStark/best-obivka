@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mariadb:11.4
+    container_name: bestobivka-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: bestobivka
+      MARIADB_USER: bestobivka
+      MARIADB_PASSWORD: secret
+    volumes:
+      - bestobivka-db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  bestobivka-db-data:
