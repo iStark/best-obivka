@@ -8,10 +8,13 @@
 npm install
 npm run dev
 npm run build
+npm run deploy
 npm run lint
 ```
 
 Локальная разработка запускается через Vite. После запуска сайт доступен по адресу, который выводит `npm run dev`.
+
+Деплой на GitHub Pages выполняется командой `npm run deploy`. Она собирает проект в `dist` и публикует результат в ветку `gh-pages`.
 
 ## Структура
 
