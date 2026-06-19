@@ -12,13 +12,13 @@ export function Faq() {
     <section className="section faq-section" id="faq">
       <div className="container faq-section__layout">
         <div className="faq-section__media reveal-on-scroll">
-          <img src={publicAsset('/images/bestobivka/faq.png')} alt="РњР°СЃС‚РµСЂСЃРєР°СЏ BestObivka" />
+          <img src={publicAsset('/images/bestobivka/faq.png')} alt="Мастерская BestObivka" />
         </div>
         <div className="faq-section__content reveal-on-scroll">
           <SectionHeading
-            kicker="Р’РѕРїСЂРѕСЃС‹ Рё РѕС‚РІРµС‚С‹"
-            title="Р—Р°РєСЂС‹РІР°РµРј С‡Р°СЃС‚С‹Рµ СЃРѕРјРЅРµРЅРёСЏ РґРѕ Р·Р°СЏРІРєРё"
-            text="РЎРѕР±СЂР°Р»Рё РіР»Р°РІРЅРѕРµ Рѕ СЃСЂРѕРєР°С…, Р·Р°РјРµСЂРµ, РјР°С‚РµСЂРёР°Р»Р°С…, РїСЂРµРґРѕРїР»Р°С‚Рµ Рё СЂР°Р±РѕС‚Рµ РІ РјР°СЃС‚РµСЂСЃРєРѕР№."
+            kicker="Вопросы и ответы"
+            title="Закрываем частые сомнения до заявки"
+            text="Собрали главное о сроках, замере, материалах, предоплате и работе в мастерской."
           />
           <div className="faq-list">
             {faqs.map((faq, index) => (

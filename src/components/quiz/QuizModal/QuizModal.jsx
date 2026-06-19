@@ -42,17 +42,17 @@ export function QuizModal() {
   const summary = useMemo(
     () =>
       [
-        'Р—Р°СЏРІРєР° СЃ РєРІРёР·Р° BestObivka',
+        'Заявка с квиза BestObivka',
         '',
-        `РњРµР±РµР»СЊ: ${formatAnswer(answers.furniture)}`,
-        `Р Р°Р±РѕС‚С‹: ${formatAnswer(answers.work)}`,
-        `РњР°С‚РµСЂРёР°Р»: ${formatAnswer(answers.material)}`,
-        `РЎСЂРѕРєРё: ${formatAnswer(answers.timing)}`,
-        files.length ? `Р¤РѕС‚Рѕ: РІС‹Р±СЂР°РЅРѕ ${files.length} С„Р°Р№Р»(Р°), РѕС‚РїСЂР°РІР»СЋ СЃР»РµРґСѓСЋС‰РёРј СЃРѕРѕР±С‰РµРЅРёРµРј` : '',
+        `Мебель: ${formatAnswer(answers.furniture)}`,
+        `Работы: ${formatAnswer(answers.work)}`,
+        `Материал: ${formatAnswer(answers.material)}`,
+        `Сроки: ${formatAnswer(answers.timing)}`,
+        files.length ? `Фото: выбрано ${files.length} файл(а), отправлю следующим сообщением` : '',
         '',
-        `РРјСЏ: ${contact.name || 'РЅРµ СѓРєР°Р·Р°РЅРѕ'}`,
-        `РўРµР»РµС„РѕРЅ: ${contact.phone || 'РЅРµ СѓРєР°Р·Р°РЅ'}`,
-        contact.comment ? `РљРѕРјРјРµРЅС‚Р°СЂРёР№: ${contact.comment}` : '',
+        `Имя: ${contact.name || 'не указано'}`,
+        `Телефон: ${contact.phone || 'не указан'}`,
+        contact.comment ? `Комментарий: ${contact.comment}` : '',
       ]
         .filter(Boolean)
         .join('\n'),
@@ -61,7 +61,7 @@ export function QuizModal() {
 
   const whatsappHref = `${company.whatsappHref}?text=${encodeURIComponent(summary)}`
   const mailHref = `mailto:${company.email}?subject=${encodeURIComponent(
-    'Р—Р°СЏРІРєР° СЃ РєРІРёР·Р° BestObivka',
+    'Заявка с квиза BestObivka',
   )}&body=${encodeURIComponent(summary)}`
 
   const handleClose = useCallback(() => {
@@ -164,10 +164,10 @@ export function QuizModal() {
       aria-modal="true"
       aria-labelledby="quiz-title"
     >
-      <button className="quiz-modal__overlay" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РєРІРёР·" onClick={handleClose} />
+      <button className="quiz-modal__overlay" type="button" aria-label="Закрыть квиз" onClick={handleClose} />
 
       <div className="quiz-modal__shell">
-        <button className="quiz-modal__close" type="button" aria-label="Р—Р°РєСЂС‹С‚СЊ РєРІРёР·" onClick={handleClose}>
+        <button className="quiz-modal__close" type="button" aria-label="Закрыть квиз" onClick={handleClose}>
           <X aria-hidden="true" size={20} />
         </button>
 
@@ -183,24 +183,24 @@ export function QuizModal() {
           <form className="quiz-modal__content" onSubmit={handleSubmit}>
             <aside className="quiz-modal__side">
               <div>
-                <p className="quiz-modal__kicker">РљРІРёР· РЅР° 1 РјРёРЅСѓС‚Сѓ</p>
-                <h2 id="quiz-title">РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅР°СЏ РѕС†РµРЅРєР° РїРµСЂРµС‚СЏР¶РєРё</h2>
+                <p className="quiz-modal__kicker">Квиз на 1 минуту</p>
+                <h2 id="quiz-title">Предварительная оценка перетяжки</h2>
                 <span>
-                  РћС‚РІРµС‚СЊС‚Рµ РЅР° РЅРµСЃРєРѕР»СЊРєРѕ РІРѕРїСЂРѕСЃРѕРІ, Р° РјР°СЃС‚РµСЂ СѓС‚РѕС‡РЅРёС‚ СЃС‚РѕРёРјРѕСЃС‚СЊ, СЃСЂРѕРєРё Рё РјР°С‚РµСЂРёР°Р»С‹.
+                  Ответьте на несколько вопросов, а мастер уточнит стоимость, сроки и материалы.
                 </span>
               </div>
 
               <div className="quiz-summary">
-                <p>Р—Р°СЏРІРєР°</p>
-                <SummaryLine label="РњРµР±РµР»СЊ" value={answers.furniture} />
-                <SummaryLine label="Р Р°Р±РѕС‚С‹" value={answers.work} />
-                <SummaryLine label="РњР°С‚РµСЂРёР°Р»" value={answers.material} />
-                <SummaryLine label="РЎСЂРѕРєРё" value={answers.timing} />
+                <p>Заявка</p>
+                <SummaryLine label="Мебель" value={answers.furniture} />
+                <SummaryLine label="Работы" value={answers.work} />
+                <SummaryLine label="Материал" value={answers.material} />
+                <SummaryLine label="Сроки" value={answers.timing} />
               </div>
             </aside>
 
             <div className="quiz-modal__main">
-              <div className="quiz-progress" aria-label={`РџСЂРѕРіСЂРµСЃСЃ ${progress}%`}>
+              <div className="quiz-progress" aria-label={`Прогресс ${progress}%`}>
                 <span style={{ width: `${progress}%` }} />
               </div>
 
@@ -229,17 +229,17 @@ export function QuizModal() {
                   disabled={stepIndex === 0}
                 >
                   <ArrowLeft aria-hidden="true" size={18} />
-                  РќР°Р·Р°Рґ
+                  Назад
                 </button>
 
                 {isContactStep ? (
                   <button className="quiz-nav-button quiz-nav-button--primary" type="submit">
-                    РџРѕР»СѓС‡РёС‚СЊ СЂР°СЃС‡РµС‚
+                    Получить расчет
                     <Send aria-hidden="true" size={18} />
                   </button>
                 ) : (
                   <button className="quiz-nav-button quiz-nav-button--primary" type="button" onClick={goNext}>
-                    Р”Р°Р»РµРµ
+                    Далее
                     <ArrowRight aria-hidden="true" size={18} />
                   </button>
                 )}
@@ -280,7 +280,7 @@ function QuestionStep({ answer, step, touched, onSelect }) {
         })}
       </div>
 
-      {touched && !hasAnswer(answer) ? <p className="quiz-error">Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚, С‡С‚РѕР±С‹ РїСЂРѕРґРѕР»Р¶РёС‚СЊ.</p> : null}
+      {touched && !hasAnswer(answer) ? <p className="quiz-error">Выберите вариант, чтобы продолжить.</p> : null}
     </div>
   )
 }
@@ -292,9 +292,9 @@ function ContactStep({ contact, files, touched, onChange, onFilesChange }) {
 
   return (
     <div className="quiz-step">
-      <p className="quiz-step__eyebrow">Р¤РёРЅР°Р»</p>
-      <h3>РљСѓРґР° РѕС‚РїСЂР°РІРёС‚СЊ СЂР°СЃС‡РµС‚?</h3>
-      <span>РћСЃС‚Р°РІСЊС‚Рµ РєРѕРЅС‚Р°РєС‚С‹. Р¤РѕС‚Рѕ РїРѕРјРѕР¶РµС‚ РЅР°Р·РІР°С‚СЊ РІРёР»РєСѓ СЃС‚РѕРёРјРѕСЃС‚Рё С‚РѕС‡РЅРµРµ.</span>
+      <p className="quiz-step__eyebrow">Финал</p>
+      <h3>Куда отправить расчет?</h3>
+      <span>Оставьте контакты. Фото поможет назвать вилку стоимости точнее.</span>
 
       <div className="quiz-fields">
         {quizContactFields.map((field) => (
@@ -325,12 +325,12 @@ function ContactStep({ contact, files, touched, onChange, onFilesChange }) {
             onChange={(event) => onFilesChange(Array.from(event.target.files || []))}
           />
           <Camera aria-hidden="true" size={18} />
-          <span>{files.length ? `Р’С‹Р±СЂР°РЅРѕ С„РѕС‚Рѕ: ${files.length}` : 'РџСЂРёР»РѕР¶РёС‚СЊ С„РѕС‚Рѕ РјРµР±РµР»Рё'}</span>
+          <span>{files.length ? `Выбрано фото: ${files.length}` : 'Приложить фото мебели'}</span>
         </label>
       </div>
 
       {touched && !isContactValid(contact) ? (
-        <p className="quiz-error">Р—Р°РїРѕР»РЅРёС‚Рµ РёРјСЏ Рё С‚РµР»РµС„РѕРЅ, С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёС‚СЊ СЂР°СЃС‡РµС‚.</p>
+        <p className="quiz-error">Заполните имя и телефон, чтобы получить расчет.</p>
       ) : null}
     </div>
   )
@@ -342,10 +342,10 @@ function SuccessView({ mailHref, summary, whatsappHref, onBack, onClose }) {
       <div className="quiz-success__icon">
         <Check aria-hidden="true" size={28} />
       </div>
-      <p className="quiz-modal__kicker">Р—Р°СЏРІРєР° СЃРѕР±СЂР°РЅР°</p>
-      <h2>РўРµРєСЃС‚ Р·Р°СЏРІРєРё СЃРєРѕРїРёСЂРѕРІР°РЅ</h2>
+      <p className="quiz-modal__kicker">Заявка собрана</p>
+      <h2>Текст заявки скопирован</h2>
       <span>
-        РћС‚РїСЂР°РІСЊС‚Рµ РµРіРѕ РјР°СЃС‚РµСЂСѓ СѓРґРѕР±РЅС‹Рј СЃРїРѕСЃРѕР±РѕРј. Р•СЃР»Рё С„РѕС‚Рѕ РІС‹Р±СЂР°РЅС‹, РїСЂРёР»РѕР¶РёС‚Рµ РёС… СЃР»РµРґСѓСЋС‰РёРј СЃРѕРѕР±С‰РµРЅРёРµРј.
+        Отправьте его мастеру удобным способом. Если фото выбраны, приложите их следующим сообщением.
       </span>
 
       <pre>{summary}</pre>
@@ -357,20 +357,20 @@ function SuccessView({ mailHref, summary, whatsappHref, onBack, onClose }) {
         </a>
         <a className="quiz-nav-button quiz-nav-button--ghost" href={mailHref}>
           <Mail aria-hidden="true" size={18} />
-          РџРѕС‡С‚Р°
+          Почта
         </a>
         <a className="quiz-nav-button quiz-nav-button--ghost" href={company.phoneHref}>
           <Phone aria-hidden="true" size={18} />
-          РџРѕР·РІРѕРЅРёС‚СЊ
+          Позвонить
         </a>
       </div>
 
       <div className="quiz-success__bottom">
         <button type="button" onClick={onBack}>
-          РР·РјРµРЅРёС‚СЊ РѕС‚РІРµС‚С‹
+          Изменить ответы
         </button>
         <button type="button" onClick={onClose}>
-          Р—Р°РєСЂС‹С‚СЊ
+          Закрыть
         </button>
       </div>
     </div>
@@ -388,10 +388,10 @@ function SummaryLine({ label, value }) {
 
 function formatAnswer(value) {
   if (Array.isArray(value)) {
-    return value.length ? value.join(', ') : 'РЅРµ РІС‹Р±СЂР°РЅРѕ'
+    return value.length ? value.join(', ') : 'не выбрано'
   }
 
-  return value || 'РЅРµ РІС‹Р±СЂР°РЅРѕ'
+  return value || 'не выбрано'
 }
 
 function hasAnswer(value) {

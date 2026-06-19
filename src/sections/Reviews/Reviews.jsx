@@ -16,17 +16,17 @@ export function Reviews() {
       <div className="container">
         <div className="reviews-section__header">
           <SectionHeading
-            kicker="РћС‚Р·С‹РІС‹ РєР»РёРµРЅС‚РѕРІ"
-            title="РћС‚Р·С‹РІС‹ РїРѕСЃР»Рµ РїРµСЂРµС‚СЏР¶РєРё Рё СЂРµРјРѕРЅС‚Р° РјРµР±РµР»Рё"
-            text="РљР»РёРµРЅС‚С‹ РїСЂРёСЃС‹Р»Р°СЋС‚ С„РѕС‚Рѕ РіРѕС‚РѕРІРѕР№ РјРµР±РµР»Рё, РґРµР»СЏС‚СЃСЏ РІРїРµС‡Р°С‚Р»РµРЅРёСЏРјРё Рё СЂРµРєРѕРјРµРЅРґСѓСЋС‚ РјР°СЃС‚РµСЂСЃРєСѓСЋ РґСЂСѓР·СЊСЏРј."
+            kicker="Отзывы клиентов"
+            title="Отзывы после перетяжки и ремонта мебели"
+            text="Клиенты присылают фото готовой мебели, делятся впечатлениями и рекомендуют мастерскую друзьям."
           />
           <a className="reviews-section__chat" href={company.telegramHref} target="_blank" rel="noreferrer">
             <MessageCircle aria-hidden="true" size={18} />
-            РќР°РїРёСЃР°С‚СЊ РІ Telegram
+            Написать в Telegram
           </a>
         </div>
 
-        <div className="reviews-slider reveal-on-scroll" aria-label="РћС‚Р·С‹РІС‹ РєР»РёРµРЅС‚РѕРІ">
+        <div className="reviews-slider reveal-on-scroll" aria-label="Отзывы клиентов">
           <div className="reviews-slider__viewport">
             {reviews.map((review, index) => (
               <article
@@ -34,7 +34,7 @@ export function Reviews() {
                 key={review}
                 aria-hidden={activeReview !== index}
               >
-                <img src={review} alt={`РћС‚Р·С‹РІ РєР»РёРµРЅС‚Р° ${index + 1}`} loading="lazy" />
+                <img src={review} alt={`Отзыв клиента ${index + 1}`} loading="lazy" />
               </article>
             ))}
           </div>
@@ -44,28 +44,28 @@ export function Reviews() {
               {String(activeReview + 1).padStart(2, '0')} /{' '}
               {String(reviews.length).padStart(2, '0')}
             </p>
-            <h3>Р–РёРІС‹Рµ РѕС‚Р·С‹РІС‹ РёР· РїРµСЂРµРїРёСЃРѕРє</h3>
+            <h3>Живые отзывы из переписок</h3>
             <span>
-              РџРµСЂРµРєР»СЋС‡Р°Р№С‚Рµ СЃРєСЂРёРЅС€РѕС‚С‹, С‡С‚РѕР±С‹ РїРѕСЃРјРѕС‚СЂРµС‚СЊ, РєР°Рє РєР»РёРµРЅС‚С‹ РѕС†РµРЅРёРІР°СЋС‚ СЂРµР·СѓР»СЊС‚Р°С‚,
-              СЃСЂРѕРєРё Рё РѕР±С‰РµРЅРёРµ СЃ РјР°СЃС‚РµСЂРѕРј.
+              Переключайте скриншоты, чтобы посмотреть, как клиенты оценивают результат,
+              сроки и общение с мастером.
             </span>
 
             <div className="reviews-slider__controls">
-              <button type="button" aria-label="РџСЂРµРґС‹РґСѓС‰РёР№ РѕС‚Р·С‹РІ" onClick={() => moveReview(-1)}>
+              <button type="button" aria-label="Предыдущий отзыв" onClick={() => moveReview(-1)}>
                 <ChevronLeft aria-hidden="true" size={20} />
               </button>
-              <button type="button" aria-label="РЎР»РµРґСѓСЋС‰РёР№ РѕС‚Р·С‹РІ" onClick={() => moveReview(1)}>
+              <button type="button" aria-label="Следующий отзыв" onClick={() => moveReview(1)}>
                 <ChevronRight aria-hidden="true" size={20} />
               </button>
             </div>
 
-            <div className="reviews-slider__dots" aria-label="Р’С‹Р±РѕСЂ РѕС‚Р·С‹РІР°">
+            <div className="reviews-slider__dots" aria-label="Выбор отзыва">
               {reviews.map((review, index) => (
                 <button
                   type="button"
                   key={`${review}-dot`}
                   className={activeReview === index ? 'is-active' : ''}
-                  aria-label={`РџРѕРєР°Р·Р°С‚СЊ РѕС‚Р·С‹РІ ${index + 1}`}
+                  aria-label={`Показать отзыв ${index + 1}`}
                   onClick={() => setActiveReview(index)}
                 />
               ))}

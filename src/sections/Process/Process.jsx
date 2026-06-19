@@ -9,11 +9,11 @@ export function Process() {
       <div className="container">
         <div className="process-section__header reveal-on-scroll">
           <div className="section-heading">
-            <p className="section-heading__kicker">РљР°Рє СЂР°Р±РѕС‚Р°РµРј</p>
-            <h2>РџРѕРЅСЏС‚РЅС‹Р№ РјР°СЂС€СЂСѓС‚ РѕС‚ РїРµСЂРІРѕРіРѕ С„РѕС‚Рѕ РґРѕ РіРѕС‚РѕРІРѕР№ РјРµР±РµР»Рё</h2>
+            <p className="section-heading__kicker">Как работаем</p>
+            <h2>Понятный маршрут от первого фото до готовой мебели</h2>
           </div>
           <ActionButton href={company.quizHref} icon={ArrowRight} variant="secondary">
-            РќР°С‡Р°С‚СЊ СЂР°СЃС‡РµС‚
+            Начать расчет
           </ActionButton>
         </div>
 

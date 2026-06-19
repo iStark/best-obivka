@@ -8,7 +8,7 @@ export function Footer() {
         <a className="site-footer__brand" href="#top" aria-label="BestObivka">
           <img src={company.logoLight} alt="BestObivka" />
         </a>
-        <nav aria-label="РќР°РІРёРіР°С†РёСЏ РІ РїРѕРґРІР°Р»Рµ">
+        <nav aria-label="Навигация в подвале">
           {navItems.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}

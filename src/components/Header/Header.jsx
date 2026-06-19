@@ -26,7 +26,7 @@ export function Header() {
         <img className="site-header__logo site-header__logo--light" src={company.logoLight} alt="" aria-hidden="true" />
       </a>
 
-      <nav className={`site-header__nav ${isOpen ? 'is-open' : ''}`} aria-label="РќР°РІРёРіР°С†РёСЏ">
+      <nav className={`site-header__nav ${isOpen ? 'is-open' : ''}`} aria-label="Навигация">
         {navItems.map((item) => (
           <a key={item.href} href={item.href} onClick={closeMenu}>
             {item.label}
@@ -38,7 +38,7 @@ export function Header() {
             {company.phone}
           </a>
           <ActionButton href={company.quizHref} icon={Phone} className="site-header__mobile-cta" onClick={closeMenu}>
-            Р Р°СЃС‡РµС‚
+            Расчет
           </ActionButton>
         </div>
       </nav>
@@ -48,12 +48,12 @@ export function Header() {
           {company.phone}
         </a>
         <ActionButton href={company.quizHref} icon={Phone} variant="primary">
-          Р Р°СЃС‡РµС‚
+          Расчет
         </ActionButton>
         <button
           className="site-header__menu"
           type="button"
-          aria-label={isOpen ? 'Р—Р°РєСЂС‹С‚СЊ РјРµРЅСЋ' : 'РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ'}
+          aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}
         >

@@ -12,22 +12,22 @@ export function Hero() {
 
       <div className="container hero-section__content">
         <p className="hero-section__eyebrow reveal">{company.region}</p>
-        <h1 className="reveal">РџРµСЂРµС‚СЏР¶РєР° РјРµР±РµР»Рё РІ РЎР°СЂР°С‚РѕРІРµ</h1>
+        <h1 className="reveal">Перетяжка мебели в Саратове</h1>
         <p className="hero-section__lead reveal">
-          РћР±РЅРѕРІР»СЏРµРј РґРёРІР°РЅС‹, РєСЂРµСЃР»Р° Рё РєСЂРѕРІР°С‚Рё РІ РјР°СЃС‚РµСЂСЃРєРѕР№: РїРѕРґР±РёСЂР°РµРј С‚РєР°РЅСЊ, С„РёРєСЃРёСЂСѓРµРј СЃРјРµС‚Сѓ,
-          Р·Р°Р±РёСЂР°РµРј РјРµР±РµР»СЊ Рё РІРѕР·РІСЂР°С‰Р°РµРј РіРѕС‚РѕРІС‹Р№ СЂРµР·СѓР»СЊС‚Р°С‚ СЃ РіР°СЂР°РЅС‚РёРµР№.
+          Обновляем диваны, кресла и кровати в мастерской: подбираем ткань, фиксируем смету,
+          забираем мебель и возвращаем готовый результат с гарантией.
         </p>
 
         <div className="hero-section__actions reveal">
           <ActionButton href={company.quizHref} icon={ArrowRight}>
-            Р Р°СЃСЃС‡РёС‚Р°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ
+            Рассчитать стоимость
           </ActionButton>
           <ActionButton href={company.phoneHref} icon={Phone} variant="light">
-            РџРѕР·РІРѕРЅРёС‚СЊ РјР°СЃС‚РµСЂСѓ
+            Позвонить мастеру
           </ActionButton>
           <a className="hero-section__max" href={company.maxHref} target="_blank" rel="noreferrer">
             <MessageCircle aria-hidden="true" size={18} />
-            <span>РћС‚РїСЂР°РІРёС‚СЊ С„РѕС‚Рѕ РІ Max</span>
+            <span>Отправить фото в Max</span>
           </a>
         </div>
       </div>

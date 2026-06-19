@@ -16,22 +16,22 @@ export function ServiceAreas() {
         >
           <div className="service-areas-section__pin service-areas-section__pin--main">
             <MapPin size={22} />
-            РЎР°СЂР°С‚РѕРІ
+            Саратов
           </div>
-          <div className="service-areas-section__pin service-areas-section__pin--side">Р­РЅРіРµР»СЊСЃ</div>
+          <div className="service-areas-section__pin service-areas-section__pin--side">Энгельс</div>
           <span className="service-areas-section__route" />
           <span className="service-areas-section__circle" />
         </div>
 
         <div className="service-areas-section__content">
-          <p className="section-heading__kicker">Р“РµРѕРіСЂР°С„РёСЏ РІС‹РµР·РґР°</p>
-          <h2>РџРµСЂРµС‚СЏР¶РєР° РјРµР±РµР»Рё РІ РЎР°СЂР°С‚РѕРІРµ Рё Р­РЅРіРµР»СЊСЃРµ СЃ Р·Р°РјРµСЂРѕРј Рё РґРѕСЃС‚Р°РІРєРѕР№</h2>
+          <p className="section-heading__kicker">География выезда</p>
+          <h2>Перетяжка мебели в Саратове и Энгельсе с замером и доставкой</h2>
           <p>
-            Р Р°Р±РѕС‚Р°РµРј РїРѕ РЎР°СЂР°С‚РѕРІСѓ, Р­РЅРіРµР»СЊСЃСѓ Рё Р±Р»РёР¶Р°Р№С€РёРј СЂР°Р№РѕРЅР°Рј. РњРѕР¶РЅРѕ РїСЂРёСЃР»Р°С‚СЊ С„РѕС‚Рѕ РјРµР±РµР»Рё,
-            РїРѕР»СѓС‡РёС‚СЊ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ СЂР°СЃС‡РµС‚, СЃРѕРіР»Р°СЃРѕРІР°С‚СЊ Р·Р°РјРµСЂ Рё РїСЂРё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РґРѕСЃС‚Р°РІРєСѓ РІ РјР°СЃС‚РµСЂСЃРєСѓСЋ.
+            Работаем по Саратову, Энгельсу и ближайшим районам. Можно прислать фото мебели,
+            получить предварительный расчет, согласовать замер и при необходимости доставку в мастерскую.
           </p>
 
-          <div className="service-areas-tags" aria-label="Р Р°Р№РѕРЅС‹ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЏ">
+          <div className="service-areas-tags" aria-label="Районы обслуживания">
             {serviceAreas.map((area) => (
               <span key={area}>{area}</span>
             ))}
@@ -48,10 +48,10 @@ export function ServiceAreas() {
 
           <div className="service-areas-actions">
             <ActionButton href={company.quizHref} icon={Navigation}>
-              Р’С‹Р·РІР°С‚СЊ РјР°СЃС‚РµСЂР°
+              Вызвать мастера
             </ActionButton>
             <ActionButton href={company.phoneHref} icon={Phone} variant="secondary">
-              РџРѕР·РІРѕРЅРёС‚СЊ
+              Позвонить
             </ActionButton>
           </div>
         </div>

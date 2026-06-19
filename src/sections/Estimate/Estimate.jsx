@@ -35,22 +35,22 @@ export function Estimate() {
           <div className="estimate-section__bullets">
             <span>
               <Check aria-hidden="true" size={18} />
-              Р¤РёРЅР°Р»СЊРЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ С„РёРєСЃРёСЂСѓРµС‚СЃСЏ РїРѕСЃР»Рµ Р·Р°РјРµСЂР°
+              Финальная стоимость фиксируется после замера
             </span>
             <span>
               <Check aria-hidden="true" size={18} />
-              РњРѕР¶РЅРѕ СЃСЂР°Р·Сѓ РїСЂРёР»РѕР¶РёС‚СЊ С„РѕС‚Рѕ РјРµР±РµР»Рё
+              Можно сразу приложить фото мебели
             </span>
             <span>
               <Check aria-hidden="true" size={18} />
-              РЎРєРёРґРєР° 10% РїРѕСЃР»Рµ РєРІРёР·Р°
+              Скидка 10% после квиза
             </span>
           </div>
         </div>
 
         <div className="calculator reveal-on-scroll">
           <div className="calculator__group">
-            <p className="calculator__label">Р§С‚Рѕ РїРµСЂРµС‚СЏРіРёРІР°РµРј</p>
+            <p className="calculator__label">Что перетягиваем</p>
             <div className="segmented segmented--services">
               {serviceItems.map((service) => (
                 <button
@@ -66,7 +66,7 @@ export function Estimate() {
           </div>
 
           <div className="calculator__group">
-            <p className="calculator__label">РњР°С‚РµСЂРёР°Р»</p>
+            <p className="calculator__label">Материал</p>
             <div className="material-choice">
               {materialOptions.map((material) => (
                 <button
@@ -83,7 +83,7 @@ export function Estimate() {
           </div>
 
           <div className="calculator__group">
-            <p className="calculator__label">Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ</p>
+            <p className="calculator__label">Дополнительно</p>
             <div className="extras-list">
               {calculatorExtras.map((extra) => (
                 <label key={extra.id}>
@@ -93,22 +93,22 @@ export function Estimate() {
                     onChange={() => toggleExtra(extra.id)}
                   />
                   <span>{extra.label}</span>
-                  <strong>{extra.price ? `+ ${formatPrice(extra.price)} в‚Ѕ` : '0 в‚Ѕ'}</strong>
+                  <strong>{extra.price ? `+ ${formatPrice(extra.price)} ₽` : '0 ₽'}</strong>
                 </label>
               ))}
             </div>
           </div>
 
           <div className="calculator__result">
-            <p>РћСЂРёРµРЅС‚РёСЂ РїРѕ РїСЂРѕРµРєС‚Сѓ</p>
-            <strong>РѕС‚ {formatPrice(total)} в‚Ѕ</strong>
-            <span>РўРѕС‡РЅСѓСЋ СЃРјРµС‚Сѓ РјР°СЃС‚РµСЂ РЅР°Р·РѕРІРµС‚ РїРѕСЃР»Рµ С„РѕС‚Рѕ РёР»Рё Р·Р°РјРµСЂР°.</span>
+            <p>Ориентир по проекту</p>
+            <strong>от {formatPrice(total)} ₽</strong>
+            <span>Точную смету мастер назовет после фото или замера.</span>
             <div className="calculator__actions">
               <ActionButton href={company.quizHref} icon={Calculator}>
-                РћС‚РєСЂС‹С‚СЊ РєРІРёР·
+                Открыть квиз
               </ActionButton>
               <ActionButton href={company.maxHref} icon={MessageCircle} variant="secondary">
-                Р¤РѕС‚Рѕ РІ Max
+                Фото в Max
               </ActionButton>
             </div>
           </div>
@@ -121,11 +121,11 @@ export function Estimate() {
 function SectionTitle() {
   return (
     <div className="section-heading">
-      <p className="section-heading__kicker">РћРЅР»Р°Р№РЅ-СЂР°СЃС‡РµС‚</p>
-      <h2>Р‘С‹СЃС‚СЂР°СЏ СЃРјРµС‚Р° РґРѕ Р·РІРѕРЅРєР°: РІС‹Р±РµСЂРёС‚Рµ РјРµР±РµР»СЊ, РјР°С‚РµСЂРёР°Р» Рё СЂР°Р±РѕС‚С‹</h2>
+      <p className="section-heading__kicker">Онлайн-расчет</p>
+      <h2>Быстрая смета до звонка: выберите мебель, материал и работы</h2>
       <p className="section-heading__text">
-        РњРёРЅРё-РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ РїРѕРјРѕРіР°РµС‚ РїРѕРЅСЏС‚СЊ РїРѕСЂСЏРґРѕРє Р±СЋРґР¶РµС‚Р°, Р° РѕСЃРЅРѕРІРЅРѕР№ РєРІРёР· СЃРѕР±РёСЂР°РµС‚ РґРµС‚Р°Р»Рё Рё
-        РѕС‚РєСЂС‹РІР°РµС‚ СЃРєРёРґРєСѓ.
+        Мини-калькулятор помогает понять порядок бюджета, а основной квиз собирает детали и
+        открывает скидку.
       </p>
     </div>
   )
